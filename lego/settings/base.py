@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'push_notifications',
     'elasticapm.contrib.django',
     'lego.utils',
+    'lego.apps.action_handlers',
     'lego.apps.users',
     'lego.apps.permissions',
     'lego.apps.articles',
@@ -36,7 +37,7 @@ INSTALLED_APPS = [
     'lego.apps.events',
     'lego.apps.external_sync',
     'lego.apps.companies',
-    'lego.apps.feed',
+    'lego.apps.feeds',
     'lego.apps.files',
     'lego.apps.flatpages',
     'lego.apps.followers',
@@ -173,9 +174,6 @@ CHANNEL_LAYERS = {
         }
     }
 }
-
-STREAM_METRIC_CLASS = 'lego.apps.feed.feed_metrics.FeedMetrics'
-CASSANDRA_DRIVER_KWARGS = {'protocol_version': 4, 'lazy_connect': True}
 
 LDAP_BASE_DN = 'dc=abakus,dc=no'
 
