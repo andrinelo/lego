@@ -12,6 +12,7 @@ from lego.apps.events.views import (
     EventViewSet, PoolViewSet, RegistrationSearchViewSet, RegistrationViewSet
 )
 from lego.apps.events.webhooks import StripeWebhook
+from lego.apps.feeds.views import NotificationsViewSet, PersonalFeedViewSet, UserFeedViewSet
 from lego.apps.files.views import FileViewSet
 from lego.apps.flatpages.views import PageViewSet
 from lego.apps.followers.views import FollowCompanyViewSet, FollowEventViewSet, FollowUserViewSet
@@ -140,3 +141,6 @@ router.register(r'surveys', SurveyViewSet)
 router.register(
     r'surveys/(?P<survey_pk>\d+)/submissions', SubmissionViewSet, base_name='submission'
 )
+router.register(r'feed-user/(?P<user_pk>\d+)', UserFeedViewSet, base_name='feed-user')
+router.register(r'feed-personal', PersonalFeedViewSet, base_name='feed-personal')
+router.register(r'feed-notifications', NotificationsViewSet, base_name='feed-notifications')
